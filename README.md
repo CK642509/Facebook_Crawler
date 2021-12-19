@@ -9,8 +9,31 @@
 ## 主要遇到困難以及解決辦法
 ### 1. 文章不會一次顯示出來 (需要往下滑)
 
+給予 javascript 的指令
+
+`driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")`
+
+再搭配for迴圈多執行幾次，即可獲得足夠多的文章
+
 ### 2. 文章的預設順序不是依照PO文時間 (需要改順序)
+
+有兩種方法，一開始我是使用 `find_element()` 搭配 `click()` 點選選項進行調整
+
+後來發現第二種方法，直接直接改個網址就好了，也就是在網址後面添加 `?sorting_setting=CHRONOLOGICAL`
 
 ### 3. 貼文連結的網址一開始不會顯示出來 
 
+標籤一開始給予的網址是 # 
+
+`href=#` 
+
+後來發現滑鼠游標移到「時間」上之後，就會呈現出網址 (取代#) 
+
+因此使用 `find_elements()` 搭配 `move_to_element()` 後，才開始擷取和分析 HTML
+
 ### 4. 文章內容不會一次全部顯示出來 (要點「顯示更多」)
+
+使用 `find_elements()` 搭配 `click()` 點開
+
+比較麻煩的是，不同貼文類型 (一般貼文、分享貼文、與很多一起的貼文...等) 在 HTML 架構上有差異，
+比較難用 class 定位，這邊我選擇多加一層條件 `role='button'` ，並且對於無法點選的 element 直接用 try except 避開
