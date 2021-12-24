@@ -19,7 +19,7 @@
 
 有兩種方法，一開始我是使用 `find_element()` 搭配 `click()` 點選選項進行調整
 
-後來發現第二種方法，直接直接改個網址就好了，也就是在網址後面添加 `?sorting_setting=CHRONOLOGICAL`
+後來發現第二種方法，直接改個網址就好了，也就是在網址後面添加 `?sorting_setting=CHRONOLOGICAL`
 
 ### 3. 貼文連結的網址一開始不會顯示出來 
 
