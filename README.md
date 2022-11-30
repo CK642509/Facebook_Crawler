@@ -37,3 +37,41 @@
 
 比較麻煩的是，不同貼文類型 (一般貼文、分享貼文、與很多一起的貼文...等) 在 HTML 架構上有差異，
 比較難用 class 定位，這邊我選擇多加一層條件 `role='button'` ，並且對於無法點選的 element 直接用 try except 避開
+
+## 安裝
+### 1. 下載專案
+```
+git clone https://github.com/CK642509/Facebook_Crawler.git
+```
+
+- 若沒有安裝 git，也可以直接下載壓縮檔下來解壓縮就好
+    - 下載方法：
+        - 右上點選 code
+        - 選擇 Download ZIP
+
+### 2. 安裝 python 套件
+```
+pip install -r requirements.txt
+```
+
+### 3. 安裝 ChromeDriver
+1. 在[這裡](https://chromedriver.chromium.org/downloads)下載 
+2. 依據你的 chrome 版本選擇適當的 ChromeDriver
+3. 下載後解壓縮，把檔案(`chromedriver.exe`)放進專案資料夾 (跟 `FB_github.ipynb`同個資料夾)
+
+> ### **在哪裡查看 Chrome 版本？**
+> 
+> 打開 Chrome -> 設定 -> 關於 Chrome
+
+### 4. 修改 FB 帳號密碼
+- 程式碼內有段地方需要設定帳號密碼，需要改成自己的
+    ```
+    email = "your_email"
+    password = "your_password"
+    ```
+### 5. 執行程式
+```
+python FB_github.py
+```
+
+- 或是用 jupyter notebook 開啟 `FB_github.ipynb`
