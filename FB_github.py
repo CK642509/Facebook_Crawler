@@ -213,11 +213,14 @@ print(len(content_list))
 # ### 4.3.2 列印出前3組資料
 
 for i in range(3):
-    print(name_list[i])
-    print(time_list[i])
-    print(url_list[i])
-    print(content_list[i])
-    print("\n")
+    try:
+        print(name_list[i])
+        print(time_list[i])
+        print(url_list[i])
+        print(content_list[i])
+        print("\n")
+    except:
+        pass
 
 
 # ### 4.3.3 檢查社團內PO文是否有關鍵字
